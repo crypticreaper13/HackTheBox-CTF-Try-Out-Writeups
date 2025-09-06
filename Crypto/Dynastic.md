@@ -9,8 +9,9 @@ We were given two files:
 ## Analysis 
 1. **Inspect `output.txt`:** - The file contained the encrypted flag. It was clearly a **cipher**, not a hash, so it could be decrypted with the right logic.
 2. **Inspect `source.py`:** - The script imports `FLAG` from a secret module. It uses two helper functions:
-    ```python def to_identity_map(a): return ord(a) - 0x41  # A=0, B=1, ..., Z=25
-    ```def from_identity_map(a): return chr(a % 26 + 0x41)  # reverse mapping
+---
+    python def to_identity_map(a): return ord(a) - 0x41  # A=0, B=1, ..., Z=25
+    def from_identity_map(a): return chr(a % 26 + 0x41)  # reverse mapping
 
 ---
 3. The encrypt function loops through each character: Alphabet characters are converted to a number (A=0…Z=25), added to the index, and converted back to a letter.
